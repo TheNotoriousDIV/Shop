@@ -4,10 +4,12 @@ import DetailsPage from "./pages/DetailsPage"
 import NotFoundPage from "./pages/NotFoundPage"
 import Checkout from "./pages/Checkout"
 import ProductProvider from "./context/ProductContext"
+import CartProvider from "./context/CartContext"
 
 
 function App() {
 return(
+  <CartProvider>
   <ProductProvider>
   <Routes>
     <Route path="/" element={<Navigate to="/products" replace />} />
@@ -17,6 +19,7 @@ return(
     <Route path="/checkout" element={<Checkout/>} />
   </Routes>
   </ProductProvider>
+  </CartProvider>
 )
 }
 
